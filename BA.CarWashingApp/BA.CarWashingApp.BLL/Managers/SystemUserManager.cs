@@ -29,7 +29,29 @@ namespace BA.CarWashingApp.BLL.Managers
         {
             throw new NotImplementedException();
         }
+        bool Permission(int id) { return true; }
 
+        public decimal SetAmount(int washingtypeFactorId, int vehicletypeFactorId, int dirtFactorId, int washingrecipeId)
+        {
+
+            var metarial = _uow.GetRepository<WashingRecipe>().GetById(washingrecipeId).Amount;
+            var washingtypefactor = _uow.GetRepository<WashingType>().GetById(washingtypeFactorId).MaterialFactor;
+            var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).MaterialFactor;
+            var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).MaterialFactor;
+            decimal amount = metarial + (15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor);
+
+            return amount;
+        }
+
+        public decimal SetDuration(int vehicletypeFactorId, int dirtFactorId, int washingtypeId)
+        {
+            var washingDuration = _uow.GetRepository<WashingType>().GetById(washingtypeId).TypeTime;
+            var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).TimeFactor;
+            var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).TimeFactor;
+            decimal Remainingtime = washingDuration + (10 * dirtfactor) + (10 * vehicletypefactor);
+            return Remainingtime;
+
+        }
         public decimal SetPrice(int factor1, int factor2, int factor3, int WashingtypeId)
         {
   
@@ -41,6 +63,11 @@ namespace BA.CarWashingApp.BLL.Managers
             decimal TotalPrice = washingprice+(100*dirtfactor)+(100*vehicletypefactor)+(100*recipefactor);
             return TotalPrice;
 
+        }
+
+        bool ISystemUserService.Permission(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

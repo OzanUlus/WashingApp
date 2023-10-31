@@ -14,9 +14,12 @@ namespace BA.CarWashingApp.BLL.Services
         bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType);
         bool Login(string username, string password);
         //izinver
-     
+        bool Permission(int id);
         //süre
+        decimal SetDuration(int vehicletypeFactorId, int dirtFactorId, int washingtypeId);
         //amount
+        decimal SetAmount(int washingtypeFactorId, int vehicletypeFactorId, int dirtFactorId, int washingrecipeId);
+        //price
         decimal SetPrice(int factor1, int factor2, int factor3, int WashingtypeId);
 
     }
