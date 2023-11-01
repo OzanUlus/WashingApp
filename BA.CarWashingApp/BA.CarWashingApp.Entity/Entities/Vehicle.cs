@@ -13,6 +13,7 @@ namespace BA.CarWashingApp.Entity.Entities
         public string Brand { get; set; }
         public string Model { get; set; }
         public string Color { get; set; }
+        public int OrderNo { get; set; }
         public int VehicleTypeId { get; set; }
         public VehicleType VehicleType { get; set; }
         public int DirtStatusId { get; set; }

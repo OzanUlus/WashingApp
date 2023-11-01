@@ -12,9 +12,23 @@ namespace BA.CarWashingApp.BLL.Services
         
         void AddAdmin(string Name, string Surname, Enum RoleType);
         bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType);
-        bool Login(string username, string password);
+
+        //Login işlemleri
+
+        //1.güçlü şifre
+         bool IsStrongPassword(string password);
+        //2. özel karakter kontrol
+        bool IsSpecialCharacter(char character);
+        //3.Email kontrolü(kullanici email ile giriş yapacaksa!!!! yoksa değiştiririz-cansin)
+        bool IsValidEmail(string email);
+        //kullanici adı db de var mı yani unique mi
+        bool IsUserExist(string username);
+        //login işlemi kontrolü(int döndürdüm=> giriş yapanın id si elimizde olsun )
+        int IsAccountTrue(string username, string password);
+
+
         //izinver
-        bool Permission(int id);
+       public bool Permission(int id, int requestpermission);
         //süre
         decimal SetDuration(int vehicletypeFactorId, int dirtFactorId, int washingtypeId);
         //amount

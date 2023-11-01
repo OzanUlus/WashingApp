@@ -10,8 +10,14 @@ namespace BA.CarWashingApp.BLL.Services
     public interface IWashingService : IService<Washing>
     {
         void GetQue(string LicensePlate, string TypeName);
-        void Washing(string TypeName, string StatusName, string Name, string UseName );
-        void ListProcess();
+        void Washing();
+
+        //genel bilgileri listeleme
+        List<Washing> ListProcess();
+        //araç bilgileri detay listeleme
+        List<Washing> ListVehicleDetail(int washingId);
+        //ek bilgiler listeleme
+        List<Washing> ListDetail(int washingId);
 
     }
 }
