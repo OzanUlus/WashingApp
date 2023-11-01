@@ -15,6 +15,7 @@ namespace BA.CarWashingApp.Entity.Entities
         }
         public string Name { get; set; }
         public decimal Stock { get; set; }
+        public decimal MinStock { get; set; }
         public List<MaterialWashingRecipe> MaterialWashingRecipes { get; set; }
     }
 }

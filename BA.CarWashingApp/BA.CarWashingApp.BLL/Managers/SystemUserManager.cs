@@ -1,10 +1,12 @@
 ﻿using BA.CarWashingApp.BLL.Services;
+using BA.CarWashingApp.DAL.Abstract;
 using BA.CarWashingApp.DAL.Uow;
 using BA.CarWashingApp.Entity.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Managers
@@ -24,10 +26,62 @@ namespace BA.CarWashingApp.BLL.Managers
         {
             throw new NotImplementedException();
         }
-
-        public bool Login(string username, string password)
+        public bool IsStrongPassword(string password)
         {
-            throw new NotImplementedException();
+            bool hasUpperCase = false;
+            bool hasLowerCase = false;
+            bool hasDigit = false;
+            bool hasSpecialCharacter = false;
+
+            foreach (char character in password)
+            {
+                if (char.IsUpper(character))
+                    hasUpperCase = true;
+                else if (char.IsLower(character))
+                    hasLowerCase = true;
+                else if (char.IsDigit(character))
+                    hasDigit = true;
+                else if (IsSpecialCharacter(character))
+                    hasSpecialCharacter = true;
+            }
+
+            return hasUpperCase && hasLowerCase && hasDigit && hasSpecialCharacter && password.Length >= 8;
+        }
+
+        public bool IsSpecialCharacter(char character)
+        {
+            string specialCharacters = "!@#$%^&*()+-=[]{}|;':,.<>?";
+
+            return specialCharacters.Contains(character);
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$";
+
+            return Regex.IsMatch(email, pattern);
+        }
+        public bool IsUserExist(string username)
+        {
+            var usernameKontrol = _uow.GetRepository<SystemUser>().GetQueryable().Where(x => x.UserName == username).FirstOrDefault();
+            if (usernameKontrol != null)
+                return true;
+            else
+                return false;
+        }
+
+        public int IsAccountTrue(string username, string password)
+        {
+            var LoginKontrol = _uow.GetRepository<SystemUser>().GetQueryable().Where(x => x.Password == password && x.UserName == username).FirstOrDefault();
+            if (LoginKontrol != null)
+            {
+                int tempInt = LoginKontrol.Id;
+                return tempInt;
+            }
+            else
+            {
+                return -1;
+            }
         }
         bool Permission(int id) { return true; }
 

@@ -11,6 +11,7 @@ namespace BA.CarWashingApp.Entity.Entities
     {
         public string Name { get; set; }
         public string SurName { get; set; }
+        public bool Status { get; set; }
         //vardiya
         public DateTime ShiftStartTime { get; set; }
         public DateTime ShiftEndTime { get; set; }
