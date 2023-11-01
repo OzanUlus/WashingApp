@@ -83,16 +83,30 @@ namespace BA.CarWashingApp.BLL.Managers
                 return -1;
             }
         }
-        bool Permission(int id) { return true; }
+        public bool Permission(int id, int requestpermission) 
+        {
+           
+            var usedleave = _uow.GetRepository<Employee>().GetById(id).UsedLeave;
+            var remainingleave = _uow.GetRepository<Employee>().GetById(id).RemainingLeave;
+            if (remainingleave >=0 && (remainingleave-requestpermission) >=0)
+            {
+                remainingleave -= requestpermission;
+                usedleave += requestpermission;
+                return true;
 
-        public decimal SetAmount(int washingtypeFactorId, int vehicletypeFactorId, int dirtFactorId, int washingrecipeId)
+            }
+            return false;   
+            
+        }
+
+        public decimal SetAmount(int washingtypeFactorId, int vehicletypeFactorId, int dirtFactorId, int materialıd)
         {
 
-            var metarial = _uow.GetRepository<WashingRecipe>().GetById(washingrecipeId).Amount;
+            var metarial = _uow.GetRepository<Material>().GetById(materialıd).Stock; 
             var washingtypefactor = _uow.GetRepository<WashingType>().GetById(washingtypeFactorId).MaterialFactor;
             var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).MaterialFactor;
             var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).MaterialFactor;
-            decimal amount = metarial + (15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor);
+            decimal amount = metarial - ((15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor));
 
             return amount;
         }
@@ -119,9 +133,6 @@ namespace BA.CarWashingApp.BLL.Managers
 
         }
 
-        bool ISystemUserService.Permission(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

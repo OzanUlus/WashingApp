@@ -28,7 +28,7 @@ namespace BA.CarWashingApp.BLL.Services
 
 
         //izinver
-        bool Permission(int id);
+       public bool Permission(int id, int requestpermission);
         //süre
         decimal SetDuration(int vehicletypeFactorId, int dirtFactorId, int washingtypeId);
         //amount
