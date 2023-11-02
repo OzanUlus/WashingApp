@@ -45,6 +45,7 @@ namespace BA.CarWashingApp.BLL.Managers
 
             return specialCharacters.Contains(character);
         }
+    
 
         public bool IsValidEmail(string email)
         {
@@ -74,6 +75,7 @@ namespace BA.CarWashingApp.BLL.Managers
                 return -1;
             }
         }
+        
         public bool Permission(int id, int requestpermission) 
         {
            
@@ -83,10 +85,14 @@ namespace BA.CarWashingApp.BLL.Managers
             {
                 remainingleave -= requestpermission;
                 usedleave += requestpermission;
+                _uow.SaveChanges();
                 return true;
+                
 
             }
-            return false;   
+            _uow.SaveChanges();
+            return false;  
+           
             
         }
 
@@ -98,7 +104,7 @@ namespace BA.CarWashingApp.BLL.Managers
             var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).MaterialFactor;
             var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).MaterialFactor;
             decimal amount = metarial - ((15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor));
-
+            
             return amount;
         }
 

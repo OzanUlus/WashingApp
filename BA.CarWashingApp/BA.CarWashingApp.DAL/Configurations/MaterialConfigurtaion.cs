@@ -15,6 +15,8 @@ namespace BA.CarWashingApp.DAL.Configurations
         {
             builder.HasKey(x => x.Id);
 
+            builder.HasAlternateKey(x => x.Name);
+
             builder
                 .Property(x => x.Name)
                 .HasMaxLength(50)

@@ -20,14 +20,14 @@ namespace BA.CarWashingApp.BLL.Managers
         {
             throw new NotImplementedException();
         }
-
+        
 
         public List<Washing> ListProcess()
-        {
+        {   
             var washing = _uow.GetRepository<Washing>();
 
             var data = washing.GetQueryable().Include(x => x.Employee).Include(x => x.Vehicle).Include(x => x.WashingTypeWashings).ThenInclude(x => x.WashingType).Include(x => x.WashingTypeWashings).ThenInclude(x => x.WashingType).ThenInclude(x => x.WashingSteps).ToList();
-            return data;
+            return data;    
         }
 
         public List<Washing> ListVehicleDetail(int washingId)
@@ -37,7 +37,7 @@ namespace BA.CarWashingApp.BLL.Managers
             var data = washing.GetQueryable().Where(x => x.Id == washingId).Include(x => x.Vehicle).ThenInclude(x => x.Customer).Include(x => x.Vehicle).ThenInclude(x => x.DirtStatus).Include(x => x.Vehicle).ThenInclude(x => x.VehicleType).ToList();
             return data;
         }
-
+        
         public List<Washing> ListDetail(int washingId)
         {
             var washing = _uow.GetRepository<Washing>();
@@ -45,7 +45,7 @@ namespace BA.CarWashingApp.BLL.Managers
             var data = washing.GetQueryable().Where(x => x.Id == washingId).Include(x => x.Employee).Include(x => x.WashingRecipe).ToList();
             return data;
         }
-
+    
         public void Washing()
         {
             //status true=>musait
@@ -54,7 +54,7 @@ namespace BA.CarWashingApp.BLL.Managers
             if (musaitCalisan != null)
             {
                 var siradakiAraba = _uow.GetRepository<Vehicle>().GetQueryable().Where(x => x.Washing.Status == "Sırada").OrderBy(a => a.OrderNo).FirstOrDefault();
-
+        
                 if (siradakiAraba != null)
                 {
                     // yıkama başlıyor
@@ -65,7 +65,7 @@ namespace BA.CarWashingApp.BLL.Managers
 
                     //yıkama statüsü her bir adıma göre değişiyor
                     WashingStepProcess(siradakiArabaYikamasi);
-
+    
                     // Araba yıkamasının(true =>yıkamada, çalışanı status(false=>meşgul) güncelledim
                     musaitCalisan.Status = false;
                     _uow.GetRepository<Employee>().Update(musaitCalisan);

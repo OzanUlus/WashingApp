@@ -10,6 +10,6 @@ namespace BA.CarWashingApp.BLL.Services
     public interface IMaterialService : IService<Material>
     {
         
-        void QueryMaterial(string Name, Material entity);
+        string QueryMaterial(string Name);
     }
 }

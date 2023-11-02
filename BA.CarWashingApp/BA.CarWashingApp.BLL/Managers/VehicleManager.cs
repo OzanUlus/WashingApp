@@ -15,6 +15,13 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
+        
+        
+            //UI da  araç kaydet sayfasında customer add de çağır.
+        
+
+       
+
         public string RegisteringVehicle(Vehicle entity)
         {
             var repo = _uow.GetRepository<Vehicle>();
@@ -31,19 +38,28 @@ namespace BA.CarWashingApp.BLL.Managers
             
         }
 
+   
+
         public bool SearchLicensePlate(string LicensePlate)
         {
-          var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x=>x.LicensePlate == LicensePlate);
-            if (plateno != null)
-            {
-                return true;
-            }
-            return false;
+            
+        
+                var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x => x.LicensePlate == LicensePlate);
+                if (plateno != null)
+                {
+                    return true;
+                }
+                return false;
+
+
+           
+            
+          
             
             
             
         }
 
-        
+      
     }
 }
