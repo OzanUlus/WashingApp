@@ -16,11 +16,13 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-        public void GetQue(string LicensePlate, string TypeName)
+
+        public List<Washing> EmployeeDetail(int id)
         {
-            throw new NotImplementedException();
+            var data = _uow.GetRepository<Washing>().GetQueryable().Include(x => x.Employee.Id == id).Include(x => x.Vehicle).ToList();
+            return data;
         }
-        
+
 
         public List<Washing> ListProcess()
         {   
