@@ -9,9 +9,6 @@ namespace BA.CarWashingApp.BLL.Services
 {
     public interface ISystemUserService : IService<SystemUser>
     {
-        
-        void AddAdmin(string Name, string Surname, Enum RoleType);
-        bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType);
 
         //Login işlemleri
 
