@@ -10,7 +10,7 @@ namespace BA.CarWashingApp.Entity.Entities
     public class WashingStep:BaseEntity
     {
         public string StepName { get; set; }
-        public DateTime StepTime { get; set; }
+        public int StepTime { get; set; } //dakika
         public int WashingTypeId { get; set; }
         public WashingType WashingType { get; set; }
     }

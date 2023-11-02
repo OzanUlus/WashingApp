@@ -17,15 +17,6 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-        public void AddAdmin(string Name, string Surname, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
         public bool IsStrongPassword(string password)
         {
             bool hasUpperCase = false;
