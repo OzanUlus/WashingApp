@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Services
 {
-    public interface IWashingTypeWashingService:IService<WashingTypeWashing>
+    public interface IWashingTypeWashingService : IService<WashingTypeWashing>
     {
     }
 }

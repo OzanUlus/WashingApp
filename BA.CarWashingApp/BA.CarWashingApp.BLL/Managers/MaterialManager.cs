@@ -16,11 +16,20 @@ namespace BA.CarWashingApp.BLL.Managers
         }
 
     
-        public void QueryMaterial(string Name, Material entity)
+        public string QueryMaterial(string Name)
         {
             var repo = _uow.GetRepository<Material>();
             var query = repo.GetQueryable().Where(x=>x.Name == Name).ToList();
-            
+            var minstock=repo.GetQueryable().Where(x => x.Name == Name) .Select(entity=>entity.MinStock).First();
+            var stock = repo.GetQueryable().Where(x=>x.Name==Name).Select(entity=>entity.Stock).First();
+            if (stock <= minstock  ) 
+            {
+                return "stok az";
+            }
+            var str = Convert.ToString(stock);
+            var minstr = Convert.ToString(minstock);
+            return "minimum stok miktarınız: "+ minstr+ ", depoda bulunan stok: "+str  ;
+           
         }
     }
 }

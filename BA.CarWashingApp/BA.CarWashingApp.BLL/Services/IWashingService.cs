@@ -9,9 +9,9 @@ namespace BA.CarWashingApp.BLL.Services
 {
     public interface IWashingService : IService<Washing>
     {
-        void GetQue(string LicensePlate, string TypeName);
-        void Washing(string TypeName, string StatusName, string Name, string UseName );
-        void ListProcess();
+        
+        
+        List<Washing> EmployeeDetail(int id);
 
     }
 }

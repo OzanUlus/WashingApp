@@ -15,20 +15,9 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-        public void AddAdmin(string Name, string Surname, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
+    
 
-        public bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Login(string username, string password)
-        {
-            throw new NotImplementedException();
-        }
+        
         public bool Permission(int id, int requestpermission) 
         {
            
@@ -38,10 +27,14 @@ namespace BA.CarWashingApp.BLL.Managers
             {
                 remainingleave -= requestpermission;
                 usedleave += requestpermission;
+                _uow.SaveChanges();
                 return true;
+                
 
             }
-            return false;   
+            _uow.SaveChanges();
+            return false;  
+           
             
         }
 
@@ -53,7 +46,7 @@ namespace BA.CarWashingApp.BLL.Managers
             var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).MaterialFactor;
             var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).MaterialFactor;
             decimal amount = metarial - ((15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor));
-
+            
             return amount;
         }
 
