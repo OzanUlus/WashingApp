@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Managers
 {
-    internal class VehicleManager : BaseManager<Vehicle>, IVehicleService
+    public class VehicleManager : BaseManager<Vehicle>, IVehicleService
     {
         public VehicleManager(IUow uow) : base(uow)
         {
@@ -44,7 +44,7 @@ namespace BA.CarWashingApp.BLL.Managers
         {
             
         
-                var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x => x.LicensePlate == LicensePlate);
+                var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x => x.LicensePlate == LicensePlate).FirstOrDefault();
                 if (plateno != null)
                 {
                     return true;

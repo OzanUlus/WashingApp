@@ -30,7 +30,7 @@ namespace BA.CarWashingApp.DAL.Configurations
             builder
                .HasOne(x => x.Vehicle)
                .WithOne(x => x.Washing)
-               .HasForeignKey<Vehicle>(x => x.WashingId)
+               .HasForeignKey<Washing>(x => x.VehicleId)
                .OnDelete(DeleteBehavior.NoAction);
             builder
                .HasOne(x => x.WashingRecipe)

@@ -78,19 +78,23 @@ namespace BA.CarWashingApp.BLL.Managers
         
         public bool Permission(int id, int requestpermission) 
         {
-           
-            var usedleave = _uow.GetRepository<Employee>().GetById(id).UsedLeave;
-            var remainingleave = _uow.GetRepository<Employee>().GetById(id).RemainingLeave;
+            var employee = _uow.GetRepository<Employee>().GetById(id);
+
+
+            var usedleave = employee.UsedLeave;
+            var remainingleave = employee.RemainingLeave;
             if (remainingleave >=0 && (remainingleave-requestpermission) >=0)
             {
                 remainingleave -= requestpermission;
+                employee.RemainingLeave = remainingleave;
                 usedleave += requestpermission;
-                _uow.SaveChanges();
-                return true;
-                
+                employee.UsedLeave = usedleave;
+                _uow.GetRepository<Employee>().Update(employee);
 
+                return true;
+ 
             }
-            _uow.SaveChanges();
+            
             return false;  
            
             

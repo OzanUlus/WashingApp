@@ -16,11 +16,23 @@ namespace BA.CarWashingApp.BLL.Managers
         {
             _uow = uow;
         }
-        public void Add(T entity) => _uow.GetRepository<T>().Add(entity);
-        public void Delete(T entity) => _uow.GetRepository<T>().Delete(entity);
+        public void Add(T entity)
+        {
+            _uow.GetRepository<T>().Add(entity);
+            _uow.SaveChanges();
+        }
+        public void Delete(T entity) 
+        {
+            _uow.GetRepository<T>().Delete(entity);
+            _uow.SaveChanges();
+        } 
         public T GetById(int id) => _uow.GetRepository<T>().GetById(id);
         public List<T> GetAll() => _uow.GetRepository<T>().GetAll();
-        public void Update(T entity) => _uow.GetRepository<T>().Update(entity);
+        public void Update(T entity) 
+        { 
+            _uow.GetRepository<T>().Update(entity);
+            _uow.SaveChanges();
+        } 
 
         public IQueryable<T> GetQueryable() => _uow.GetRepository<T>().GetQueryable();
     }

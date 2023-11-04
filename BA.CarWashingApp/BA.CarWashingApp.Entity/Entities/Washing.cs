@@ -22,6 +22,7 @@ namespace BA.CarWashingApp.Entity.Entities
       
         public Vehicle Vehicle { get; set; }
         public Employee Employee { get; set; }
-        
+        public int VehicleId { get; set; }
+
     }
 }
