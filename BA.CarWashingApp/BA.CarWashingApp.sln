@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BA.CarWashingApp.DAL", "BA.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BA.CarWashingApp.Entity", "BA.CarWashingApp.Entity\BA.CarWashingApp.Entity.csproj", "{CC3C52D8-408C-4881-9611-8DE551DC015C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA.CarWashingApp.UI", "BA.CarWashingApp.UI\BA.CarWashingApp.UI.csproj", "{4B1B06B2-3F82-4138-A75B-AC8B68920EE2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA.CarWashingApp.Console.UI", "BA.CarWashingApp.Console.UI\BA.CarWashingApp.Console.UI.csproj", "{0367E378-ACDA-4FED-BA79-DCA337D403F2}"
 EndProject
 Global
@@ -29,10 +31,6 @@ Global
 		{CC3C52D8-408C-4881-9611-8DE551DC015C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC3C52D8-408C-4881-9611-8DE551DC015C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC3C52D8-408C-4881-9611-8DE551DC015C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0367E378-ACDA-4FED-BA79-DCA337D403F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0367E378-ACDA-4FED-BA79-DCA337D403F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0367E378-ACDA-4FED-BA79-DCA337D403F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0367E378-ACDA-4FED-BA79-DCA337D403F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
