@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BA.CarWashingApp.DAL", "BA.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BA.CarWashingApp.Entity", "BA.CarWashingApp.Entity\BA.CarWashingApp.Entity.csproj", "{CC3C52D8-408C-4881-9611-8DE551DC015C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA.CarWashingApp.UI", "BA.CarWashingApp.UI\BA.CarWashingApp.UI.csproj", "{0367E378-ACDA-4FED-BA79-DCA337D403F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BA.CarWashingApp.Console.UI", "BA.CarWashingApp.UI\BA.CarWashingApp.Console.UI.csproj", "{0367E378-ACDA-4FED-BA79-DCA337D403F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
