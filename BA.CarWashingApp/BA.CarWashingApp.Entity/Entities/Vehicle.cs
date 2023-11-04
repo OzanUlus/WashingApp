@@ -21,6 +21,6 @@ namespace BA.CarWashingApp.Entity.Entities
         public int CustomerId { get; set; }
         public Customer Customer { get; set; }
         public Washing Washing { get; set; }
-        public int WashingId { get; set; }
+        
     }
 }
