@@ -41,9 +41,11 @@
             cbRole = new System.Windows.Forms.ComboBox();
             lblRole = new System.Windows.Forms.Label();
             btnAdd = new System.Windows.Forms.Button();
+            gbAddRole = new System.Windows.Forms.GroupBox();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
+            gbAddRole.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
@@ -120,7 +122,7 @@
             // 
             lblUserName.AutoSize = true;
             lblUserName.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblUserName.Location = new System.Drawing.Point(593, 314);
+            lblUserName.Location = new System.Drawing.Point(125, 88);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new System.Drawing.Size(121, 35);
             lblUserName.TabIndex = 9;
@@ -130,7 +132,7 @@
             // tbUserName
             // 
             tbUserName.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            tbUserName.Location = new System.Drawing.Point(720, 314);
+            tbUserName.Location = new System.Drawing.Point(252, 88);
             tbUserName.Name = "tbUserName";
             tbUserName.Size = new System.Drawing.Size(206, 42);
             tbUserName.TabIndex = 10;
@@ -139,7 +141,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblPassword.Location = new System.Drawing.Point(593, 383);
+            lblPassword.Location = new System.Drawing.Point(125, 157);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new System.Drawing.Size(118, 35);
             lblPassword.TabIndex = 11;
@@ -148,7 +150,7 @@
             // tbPassword
             // 
             tbPassword.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            tbPassword.Location = new System.Drawing.Point(720, 383);
+            tbPassword.Location = new System.Drawing.Point(252, 157);
             tbPassword.Name = "tbPassword";
             tbPassword.Size = new System.Drawing.Size(206, 42);
             tbPassword.TabIndex = 12;
@@ -157,7 +159,7 @@
             // 
             cbRole.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbRole.FormattingEnabled = true;
-            cbRole.Location = new System.Drawing.Point(720, 470);
+            cbRole.Location = new System.Drawing.Point(252, 244);
             cbRole.Name = "cbRole";
             cbRole.Size = new System.Drawing.Size(206, 48);
             cbRole.TabIndex = 13;
@@ -166,7 +168,7 @@
             // 
             lblRole.AutoSize = true;
             lblRole.Font = new System.Drawing.Font("Bahnschrift Condensed", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblRole.Location = new System.Drawing.Point(645, 476);
+            lblRole.Location = new System.Drawing.Point(177, 250);
             lblRole.Name = "lblRole";
             lblRole.Size = new System.Drawing.Size(66, 35);
             lblRole.TabIndex = 14;
@@ -175,7 +177,7 @@
             // btnAdd
             // 
             btnAdd.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnAdd.Location = new System.Drawing.Point(834, 571);
+            btnAdd.Location = new System.Drawing.Point(366, 345);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new System.Drawing.Size(92, 56);
             btnAdd.TabIndex = 15;
@@ -183,18 +185,27 @@
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
+            // gbAddRole
+            // 
+            gbAddRole.Controls.Add(btnAdd);
+            gbAddRole.Controls.Add(lblRole);
+            gbAddRole.Controls.Add(cbRole);
+            gbAddRole.Controls.Add(tbPassword);
+            gbAddRole.Controls.Add(lblPassword);
+            gbAddRole.Controls.Add(tbUserName);
+            gbAddRole.Controls.Add(lblUserName);
+            gbAddRole.Location = new System.Drawing.Point(468, 226);
+            gbAddRole.Name = "gbAddRole";
+            gbAddRole.Size = new System.Drawing.Size(670, 482);
+            gbAddRole.TabIndex = 16;
+            gbAddRole.TabStop = false;
+            // 
             // App_User
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1670, 952);
-            Controls.Add(btnAdd);
-            Controls.Add(lblRole);
-            Controls.Add(cbRole);
-            Controls.Add(tbPassword);
-            Controls.Add(lblPassword);
-            Controls.Add(tbUserName);
-            Controls.Add(lblUserName);
+            Controls.Add(gbAddRole);
             Controls.Add(panel3);
             Controls.Add(panelMenu);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -206,8 +217,9 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            gbAddRole.ResumeLayout(false);
+            gbAddRole.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -225,5 +237,6 @@
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.GroupBox gbAddRole;
     }
 }

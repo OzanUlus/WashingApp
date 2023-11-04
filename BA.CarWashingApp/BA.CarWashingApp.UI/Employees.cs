@@ -19,7 +19,7 @@ namespace BA.CarWashingApp.UI
 
         public Button btnAddEmployee
         {
-            get { return button1; }
+            get { return btnAdd_Employee; }
         }
 
 
