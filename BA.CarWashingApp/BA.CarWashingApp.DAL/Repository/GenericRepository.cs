@@ -20,6 +20,7 @@ namespace BA.CarWashingApp.DAL.Repository
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);
+            
         }
 
         public void Delete(T entity)

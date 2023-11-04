@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Managers
 {
-    internal class MaterialManager : BaseManager<Material>, IMaterialService
+    public class MaterialManager : BaseManager<Material>, IMaterialService
     {
         public MaterialManager(IUow uow) : base(uow)
         {
