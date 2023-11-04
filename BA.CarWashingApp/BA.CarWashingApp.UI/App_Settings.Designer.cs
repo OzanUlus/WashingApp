@@ -36,12 +36,12 @@
             label1 = new System.Windows.Forms.Label();
             CbVehicleType = new System.Windows.Forms.ComboBox();
             lblVehicleType = new System.Windows.Forms.Label();
-            textBox1 = new System.Windows.Forms.TextBox();
+            tbWashingTime = new System.Windows.Forms.TextBox();
             lblDirtType = new System.Windows.Forms.Label();
-            label5 = new System.Windows.Forms.Label();
-            label6 = new System.Windows.Forms.Label();
+            lblRecipes = new System.Windows.Forms.Label();
+            lblWashTime = new System.Windows.Forms.Label();
             cbDirtType = new System.Windows.Forms.ComboBox();
-            comboBox2 = new System.Windows.Forms.ComboBox();
+            cbRecipes = new System.Windows.Forms.ComboBox();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -137,13 +137,13 @@
             lblVehicleType.TabIndex = 11;
             lblVehicleType.Text = "Vehicle Type";
             // 
-            // textBox1
+            // tbWashingTime
             // 
-            textBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox1.Location = new System.Drawing.Point(571, 383);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(100, 36);
-            textBox1.TabIndex = 12;
+            tbWashingTime.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWashingTime.Location = new System.Drawing.Point(608, 371);
+            tbWashingTime.Name = "tbWashingTime";
+            tbWashingTime.Size = new System.Drawing.Size(301, 36);
+            tbWashingTime.TabIndex = 12;
             // 
             // lblDirtType
             // 
@@ -155,57 +155,57 @@
             lblDirtType.TabIndex = 13;
             lblDirtType.Text = "Dirt Type";
             // 
-            // label5
+            // lblRecipes
             // 
-            label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(742, 391);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 29);
-            label5.TabIndex = 14;
-            label5.Text = "label5";
+            lblRecipes.AutoSize = true;
+            lblRecipes.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblRecipes.Location = new System.Drawing.Point(480, 309);
+            lblRecipes.Name = "lblRecipes";
+            lblRecipes.Size = new System.Drawing.Size(122, 29);
+            lblRecipes.TabIndex = 14;
+            lblRecipes.Text = "Wash Recipes";
             // 
-            // label6
+            // lblWashTime
             // 
-            label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(873, 374);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(63, 29);
-            label6.TabIndex = 15;
-            label6.Text = "label6";
+            lblWashTime.AutoSize = true;
+            lblWashTime.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblWashTime.Location = new System.Drawing.Point(467, 374);
+            lblWashTime.Name = "lblWashTime";
+            lblWashTime.Size = new System.Drawing.Size(122, 29);
+            lblWashTime.TabIndex = 15;
+            lblWashTime.Text = "Washing Time";
             // 
             // cbDirtType
             // 
             cbDirtType.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbDirtType.FormattingEnabled = true;
-            cbDirtType.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
+            cbDirtType.Items.AddRange(new object[] { "Very Dirty", "Normal Dirty", "Low Dirty" });
             cbDirtType.Location = new System.Drawing.Point(608, 244);
             cbDirtType.Name = "cbDirtType";
             cbDirtType.Size = new System.Drawing.Size(301, 37);
             cbDirtType.TabIndex = 16;
             // 
-            // comboBox2
+            // cbRecipes
             // 
-            comboBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
-            comboBox2.Location = new System.Drawing.Point(608, 301);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new System.Drawing.Size(121, 37);
-            comboBox2.TabIndex = 17;
+            cbRecipes.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cbRecipes.FormattingEnabled = true;
+            cbRecipes.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
+            cbRecipes.Location = new System.Drawing.Point(608, 309);
+            cbRecipes.Name = "cbRecipes";
+            cbRecipes.Size = new System.Drawing.Size(301, 37);
+            cbRecipes.TabIndex = 17;
             // 
             // App_Settings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1522, 703);
-            Controls.Add(comboBox2);
+            Controls.Add(cbRecipes);
             Controls.Add(cbDirtType);
-            Controls.Add(label6);
-            Controls.Add(label5);
+            Controls.Add(lblWashTime);
+            Controls.Add(lblRecipes);
             Controls.Add(lblDirtType);
-            Controls.Add(textBox1);
+            Controls.Add(tbWashingTime);
             Controls.Add(lblVehicleType);
             Controls.Add(CbVehicleType);
             Controls.Add(panel3);
@@ -232,11 +232,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CbVehicleType;
         private System.Windows.Forms.Label lblVehicleType;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbWashingTime;
         private System.Windows.Forms.Label lblDirtType;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblRecipes;
+        private System.Windows.Forms.Label lblWashTime;
         private System.Windows.Forms.ComboBox cbDirtType;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbRecipes;
     }
 }
