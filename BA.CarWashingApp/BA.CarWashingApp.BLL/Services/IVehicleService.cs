@@ -9,8 +9,11 @@ namespace BA.CarWashingApp.BLL.Services
 {
     public interface IVehicleService : IService<Vehicle>
     {
+     
         bool SearchLicensePlate(string LicensePlate);
         string RegisteringVehicle(Vehicle entity);
+
+        List<Vehicle> GetVehiclewithCustomer();
             
        
     }

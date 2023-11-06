@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BA.CarWashingApp.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231029215143_mig_1")]
-    partial class mig_1
+    [Migration("20231104223224_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -119,6 +119,9 @@ namespace BA.CarWashingApp.DAL.Migrations
                     b.Property<DateTime>("ShiftStartTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("SurName")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -154,6 +157,9 @@ namespace BA.CarWashingApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<decimal>("MinStock")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -164,6 +170,8 @@ namespace BA.CarWashingApp.DAL.Migrations
                         .HasColumnType("decimal(7,2)");
 
                     b.HasKey("Id");
+
+                    b.HasAlternateKey("Name");
 
                     b.ToTable("Materials");
                 });
@@ -248,10 +256,10 @@ namespace BA.CarWashingApp.DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("VehicleTypeId")
+                    b.Property<int>("OrderNo")
                         .HasColumnType("int");
 
-                    b.Property<int>("WashingId")
+                    b.Property<int>("VehicleTypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -261,9 +269,6 @@ namespace BA.CarWashingApp.DAL.Migrations
                     b.HasIndex("DirtStatusId");
 
                     b.HasIndex("VehicleTypeId");
-
-                    b.HasIndex("WashingId")
-                        .IsUnique();
 
                     b.ToTable("Vehicles");
                 });
@@ -306,17 +311,27 @@ namespace BA.CarWashingApp.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("RemainingTime")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("RemainingTime")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalPrice")
                         .HasPrecision(6, 2)
                         .HasColumnType("decimal(6,2)");
 
+                    b.Property<int>("VehicleId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WashingRecipeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("VehicleId")
+                        .IsUnique();
 
                     b.HasIndex("WashingRecipeId");
 
@@ -362,8 +377,8 @@ namespace BA.CarWashingApp.DAL.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<DateTime>("StepTime")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("StepTime")
+                        .HasColumnType("int");
 
                     b.Property<int>("WashingTypeId")
                         .HasColumnType("int");
@@ -480,28 +495,28 @@ namespace BA.CarWashingApp.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BA.CarWashingApp.Entity.Entities.Washing", "Washing")
-                        .WithOne("Vehicle")
-                        .HasForeignKey("BA.CarWashingApp.Entity.Entities.Vehicle", "WashingId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.Navigation("Customer");
 
                     b.Navigation("DirtStatus");
 
                     b.Navigation("VehicleType");
-
-                    b.Navigation("Washing");
                 });
 
             modelBuilder.Entity("BA.CarWashingApp.Entity.Entities.Washing", b =>
                 {
+                    b.HasOne("BA.CarWashingApp.Entity.Entities.Vehicle", "Vehicle")
+                        .WithOne("Washing")
+                        .HasForeignKey("BA.CarWashingApp.Entity.Entities.Washing", "VehicleId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("BA.CarWashingApp.Entity.Entities.WashingRecipe", "WashingRecipe")
                         .WithMany("Washings")
                         .HasForeignKey("WashingRecipeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Vehicle");
 
                     b.Navigation("WashingRecipe");
                 });
@@ -556,6 +571,12 @@ namespace BA.CarWashingApp.DAL.Migrations
                     b.Navigation("Employees");
                 });
 
+            modelBuilder.Entity("BA.CarWashingApp.Entity.Entities.Vehicle", b =>
+                {
+                    b.Navigation("Washing")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BA.CarWashingApp.Entity.Entities.VehicleType", b =>
                 {
                     b.Navigation("Vehicles");
@@ -564,9 +585,6 @@ namespace BA.CarWashingApp.DAL.Migrations
             modelBuilder.Entity("BA.CarWashingApp.Entity.Entities.Washing", b =>
                 {
                     b.Navigation("Employee")
-                        .IsRequired();
-
-                    b.Navigation("Vehicle")
                         .IsRequired();
 
                     b.Navigation("WashingTypeWashings");

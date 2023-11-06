@@ -17,15 +17,6 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-        public void AddAdmin(string Name, string Surname, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AddEmployeeToApp(string Name, string Password, string Position, Enum RoleType)
-        {
-            throw new NotImplementedException();
-        }
         public bool IsStrongPassword(string password)
         {
             bool hasUpperCase = false;
@@ -54,6 +45,7 @@ namespace BA.CarWashingApp.BLL.Managers
 
             return specialCharacters.Contains(character);
         }
+    
 
         public bool IsValidEmail(string email)
         {
@@ -83,19 +75,28 @@ namespace BA.CarWashingApp.BLL.Managers
                 return -1;
             }
         }
+        
         public bool Permission(int id, int requestpermission) 
         {
-           
-            var usedleave = _uow.GetRepository<Employee>().GetById(id).UsedLeave;
-            var remainingleave = _uow.GetRepository<Employee>().GetById(id).RemainingLeave;
+            var employee = _uow.GetRepository<Employee>().GetById(id);
+
+
+            var usedleave = employee.UsedLeave;
+            var remainingleave = employee.RemainingLeave;
             if (remainingleave >=0 && (remainingleave-requestpermission) >=0)
             {
                 remainingleave -= requestpermission;
+                employee.RemainingLeave = remainingleave;
                 usedleave += requestpermission;
-                return true;
+                employee.UsedLeave = usedleave;
+                _uow.GetRepository<Employee>().Update(employee);
 
+                return true;
+ 
             }
-            return false;   
+            
+            return false;  
+           
             
         }
 
@@ -107,7 +108,7 @@ namespace BA.CarWashingApp.BLL.Managers
             var vehicletypefactor = _uow.GetRepository<VehicleType>().GetById(vehicletypeFactorId).MaterialFactor;
             var dirtfactor = _uow.GetRepository<DirtStatus>().GetById(dirtFactorId).MaterialFactor;
             decimal amount = metarial - ((15 * washingtypefactor) + (15 * vehicletypefactor) + (15 * dirtfactor));
-
+            
             return amount;
         }
 

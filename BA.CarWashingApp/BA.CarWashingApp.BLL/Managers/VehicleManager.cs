@@ -1,6 +1,7 @@
 ﻿using BA.CarWashingApp.BLL.Services;
 using BA.CarWashingApp.DAL.Uow;
 using BA.CarWashingApp.Entity.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,16 @@ using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Managers
 {
-    internal class VehicleManager : BaseManager<Vehicle>, IVehicleService
+    public class VehicleManager : BaseManager<Vehicle>, IVehicleService
     {
         public VehicleManager(IUow uow) : base(uow)
         {
+        }
+
+        public List<Vehicle> GetVehiclewithCustomer()
+        {
+            var repo = _uow.GetRepository<Vehicle>().GetQueryable().Include(x => x.Customer).ToList();
+            return repo;
         }
 
         public string RegisteringVehicle(Vehicle entity)
@@ -22,28 +29,37 @@ namespace BA.CarWashingApp.BLL.Managers
             if (isExist)
             {
                 
-                return "plaka zaten tanımlı";
+                return "Plaka zaten tanımlı";
             }
             repo.Add(entity);
             _uow.SaveChanges();
-            return "araç başırı ile eklendi";
+            return "Araç başarı ile eklendi";
 
             
         }
+
+   
 
         public bool SearchLicensePlate(string LicensePlate)
         {
-          var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x=>x.LicensePlate == LicensePlate);
-            if (plateno != null)
-            {
-                return true;
-            }
-            return false;
+            
+        
+                var plateno = _uow.GetRepository<Vehicle>().GetAll().Where(x => x.LicensePlate == LicensePlate).FirstOrDefault();
+                if (plateno != null)
+                {
+                    return true;
+                }
+                return false;
+
+
+           
+            
+          
             
             
             
         }
 
-        
+      
     }
 }
