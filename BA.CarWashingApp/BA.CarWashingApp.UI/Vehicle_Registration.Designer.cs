@@ -34,11 +34,18 @@
             panel2 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
-            groupBox1 = new System.Windows.Forms.GroupBox();
-            btnSearch = new System.Windows.Forms.Button();
-            tbPlateSearch = new System.Windows.Forms.TextBox();
             groupBox2 = new System.Windows.Forms.GroupBox();
-            tbCoPhoneNumber = new System.Windows.Forms.MaskedTextBox();
+            tbCoPhoneNumber = new System.Windows.Forms.TextBox();
+            tbCustomeID = new System.Windows.Forms.TextBox();
+            tbDirtStatusID = new System.Windows.Forms.TextBox();
+            tbVehicleTypeID = new System.Windows.Forms.TextBox();
+            tbOrderNo = new System.Windows.Forms.TextBox();
+            label6 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
+            tbCoSurname = new System.Windows.Forms.TextBox();
+            lblCoName = new System.Windows.Forms.Label();
             btnSave = new System.Windows.Forms.Button();
             tbCoEmail = new System.Windows.Forms.TextBox();
             lblCoEmail = new System.Windows.Forms.Label();
@@ -53,12 +60,12 @@
             lblModel = new System.Windows.Forms.Label();
             lblLisancePlate = new System.Windows.Forms.Label();
             lblBrand = new System.Windows.Forms.Label();
-            lblCoName = new System.Windows.Forms.Label();
-            tbCoSurname = new System.Windows.Forms.TextBox();
+            listBox1 = new System.Windows.Forms.ListBox();
+            btnDelete = new System.Windows.Forms.Button();
+            btnList = new System.Windows.Forms.Button();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,7 +75,7 @@
             panelMenu.Controls.Add(panel1);
             panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             panelMenu.Location = new System.Drawing.Point(0, 0);
-            panelMenu.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            panelMenu.Margin = new System.Windows.Forms.Padding(7);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new System.Drawing.Size(326, 853);
             panelMenu.TabIndex = 3;
@@ -117,7 +124,7 @@
             panel3.Location = new System.Drawing.Point(326, 0);
             panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(1508, 115);
+            panel3.Size = new System.Drawing.Size(1715, 115);
             panel3.TabIndex = 4;
             // 
             // label1
@@ -132,44 +139,19 @@
             label1.Text = "Vehicle Registration";
             label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(btnSearch);
-            groupBox1.Controls.Add(tbPlateSearch);
-            groupBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            groupBox1.Location = new System.Drawing.Point(552, 189);
-            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox1.Size = new System.Drawing.Size(352, 422);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Car Lisance Plate Search";
-            // 
-            // btnSearch
-            // 
-            btnSearch.Location = new System.Drawing.Point(205, 152);
-            btnSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new System.Drawing.Size(92, 43);
-            btnSearch.TabIndex = 1;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
-            // 
-            // tbPlateSearch
-            // 
-            tbPlateSearch.Location = new System.Drawing.Point(52, 104);
-            tbPlateSearch.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            tbPlateSearch.Name = "tbPlateSearch";
-            tbPlateSearch.Size = new System.Drawing.Size(244, 36);
-            tbPlateSearch.TabIndex = 0;
-            // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(tbCoPhoneNumber);
+            groupBox2.Controls.Add(tbCustomeID);
+            groupBox2.Controls.Add(tbDirtStatusID);
+            groupBox2.Controls.Add(tbVehicleTypeID);
+            groupBox2.Controls.Add(tbOrderNo);
+            groupBox2.Controls.Add(label6);
+            groupBox2.Controls.Add(label5);
+            groupBox2.Controls.Add(label4);
+            groupBox2.Controls.Add(label3);
             groupBox2.Controls.Add(tbCoSurname);
             groupBox2.Controls.Add(lblCoName);
-            groupBox2.Controls.Add(tbCoPhoneNumber);
             groupBox2.Controls.Add(btnSave);
             groupBox2.Controls.Add(tbCoEmail);
             groupBox2.Controls.Add(lblCoEmail);
@@ -185,11 +167,11 @@
             groupBox2.Controls.Add(lblLisancePlate);
             groupBox2.Controls.Add(lblBrand);
             groupBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            groupBox2.Location = new System.Drawing.Point(1147, 189);
+            groupBox2.Location = new System.Drawing.Point(337, 165);
             groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             groupBox2.Name = "groupBox2";
             groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            groupBox2.Size = new System.Drawing.Size(373, 531);
+            groupBox2.Size = new System.Drawing.Size(603, 531);
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Car Lisance Plate Add";
@@ -199,20 +181,119 @@
             tbCoPhoneNumber.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             tbCoPhoneNumber.Location = new System.Drawing.Point(150, 353);
             tbCoPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            tbCoPhoneNumber.Mask = "(999) 000-0000";
             tbCoPhoneNumber.Name = "tbCoPhoneNumber";
-            tbCoPhoneNumber.Size = new System.Drawing.Size(194, 26);
-            tbCoPhoneNumber.TabIndex = 7;
+            tbCoPhoneNumber.Size = new System.Drawing.Size(124, 26);
+            tbCoPhoneNumber.TabIndex = 26;
+            // 
+            // tbCustomeID
+            // 
+            tbCustomeID.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbCustomeID.Location = new System.Drawing.Point(430, 188);
+            tbCustomeID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tbCustomeID.Name = "tbCustomeID";
+            tbCustomeID.Size = new System.Drawing.Size(148, 26);
+            tbCustomeID.TabIndex = 25;
+            // 
+            // tbDirtStatusID
+            // 
+            tbDirtStatusID.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbDirtStatusID.Location = new System.Drawing.Point(430, 143);
+            tbDirtStatusID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tbDirtStatusID.Name = "tbDirtStatusID";
+            tbDirtStatusID.Size = new System.Drawing.Size(148, 26);
+            tbDirtStatusID.TabIndex = 24;
+            // 
+            // tbVehicleTypeID
+            // 
+            tbVehicleTypeID.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbVehicleTypeID.Location = new System.Drawing.Point(430, 101);
+            tbVehicleTypeID.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tbVehicleTypeID.Name = "tbVehicleTypeID";
+            tbVehicleTypeID.Size = new System.Drawing.Size(148, 26);
+            tbVehicleTypeID.TabIndex = 23;
+            // 
+            // tbOrderNo
+            // 
+            tbOrderNo.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbOrderNo.Location = new System.Drawing.Point(430, 55);
+            tbOrderNo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tbOrderNo.Name = "tbOrderNo";
+            tbOrderNo.Size = new System.Drawing.Size(148, 26);
+            tbOrderNo.TabIndex = 22;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(317, 196);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(94, 18);
+            label6.TabIndex = 21;
+            label6.Text = "Customer ID:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(317, 151);
+            label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(101, 18);
+            label5.TabIndex = 20;
+            label5.Text = "Dirt Status ID:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(317, 109);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(109, 18);
+            label4.TabIndex = 19;
+            label4.Text = "Vehicle Type ID:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(317, 60);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(72, 18);
+            label3.TabIndex = 18;
+            label3.Text = "Order No:";
+            // 
+            // tbCoSurname
+            // 
+            tbCoSurname.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbCoSurname.Location = new System.Drawing.Point(151, 298);
+            tbCoSurname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tbCoSurname.Name = "tbCoSurname";
+            tbCoSurname.Size = new System.Drawing.Size(123, 26);
+            tbCoSurname.TabIndex = 17;
+            // 
+            // lblCoName
+            // 
+            lblCoName.AutoSize = true;
+            lblCoName.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblCoName.Location = new System.Drawing.Point(44, 223);
+            lblCoName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblCoName.Name = "lblCoName";
+            lblCoName.Size = new System.Drawing.Size(99, 36);
+            lblCoName.TabIndex = 16;
+            lblCoName.Text = "    Car Owner \r\n         Name :";
             // 
             // btnSave
             // 
             btnSave.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnSave.Location = new System.Drawing.Point(253, 460);
+            btnSave.Location = new System.Drawing.Point(468, 472);
             btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnSave.Name = "btnSave";
-            btnSave.Size = new System.Drawing.Size(92, 43);
+            btnSave.Size = new System.Drawing.Size(110, 43);
             btnSave.TabIndex = 15;
-            btnSave.Text = "Save";
+            btnSave.Text = "Search / Save";
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
@@ -222,7 +303,7 @@
             tbCoEmail.Location = new System.Drawing.Point(150, 407);
             tbCoEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbCoEmail.Name = "tbCoEmail";
-            tbCoEmail.Size = new System.Drawing.Size(194, 26);
+            tbCoEmail.Size = new System.Drawing.Size(124, 26);
             tbCoEmail.TabIndex = 14;
             // 
             // lblCoEmail
@@ -253,7 +334,7 @@
             tbCoName.Location = new System.Drawing.Point(151, 233);
             tbCoName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbCoName.Name = "tbCoName";
-            tbCoName.Size = new System.Drawing.Size(194, 26);
+            tbCoName.Size = new System.Drawing.Size(123, 26);
             tbCoName.TabIndex = 10;
             // 
             // tbColor
@@ -262,7 +343,7 @@
             tbColor.Location = new System.Drawing.Point(151, 188);
             tbColor.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbColor.Name = "tbColor";
-            tbColor.Size = new System.Drawing.Size(194, 26);
+            tbColor.Size = new System.Drawing.Size(123, 26);
             tbColor.TabIndex = 9;
             // 
             // tbModel
@@ -271,7 +352,7 @@
             tbModel.Location = new System.Drawing.Point(150, 143);
             tbModel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbModel.Name = "tbModel";
-            tbModel.Size = new System.Drawing.Size(194, 26);
+            tbModel.Size = new System.Drawing.Size(124, 26);
             tbModel.TabIndex = 8;
             // 
             // tbBrand
@@ -280,7 +361,7 @@
             tbBrand.Location = new System.Drawing.Point(151, 101);
             tbBrand.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbBrand.Name = "tbBrand";
-            tbBrand.Size = new System.Drawing.Size(194, 26);
+            tbBrand.Size = new System.Drawing.Size(123, 26);
             tbBrand.TabIndex = 7;
             // 
             // tbLisancePlate
@@ -289,7 +370,7 @@
             tbLisancePlate.Location = new System.Drawing.Point(150, 52);
             tbLisancePlate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             tbLisancePlate.Name = "tbLisancePlate";
-            tbLisancePlate.Size = new System.Drawing.Size(194, 26);
+            tbLisancePlate.Size = new System.Drawing.Size(124, 26);
             tbLisancePlate.TabIndex = 6;
             // 
             // lblCoSurname
@@ -347,33 +428,46 @@
             lblBrand.TabIndex = 1;
             lblBrand.Text = "Brand:";
             // 
-            // lblCoName
+            // listBox1
             // 
-            lblCoName.AutoSize = true;
-            lblCoName.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lblCoName.Location = new System.Drawing.Point(44, 223);
-            lblCoName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblCoName.Name = "lblCoName";
-            lblCoName.Size = new System.Drawing.Size(99, 36);
-            lblCoName.TabIndex = 16;
-            lblCoName.Text = "    Car Owner \r\n         Name :";
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 15;
+            listBox1.Location = new System.Drawing.Point(960, 176);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new System.Drawing.Size(1069, 514);
+            listBox1.TabIndex = 7;
             // 
-            // tbCoSurname
+            // btnDelete
             // 
-            tbCoSurname.Font = new System.Drawing.Font("Bahnschrift Condensed", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            tbCoSurname.Location = new System.Drawing.Point(151, 298);
-            tbCoSurname.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            tbCoSurname.Name = "tbCoSurname";
-            tbCoSurname.Size = new System.Drawing.Size(194, 26);
-            tbCoSurname.TabIndex = 17;
+            btnDelete.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDelete.Location = new System.Drawing.Point(1621, 696);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(80, 38);
+            btnDelete.TabIndex = 9;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnList
+            // 
+            btnList.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnList.Location = new System.Drawing.Point(1707, 696);
+            btnList.Name = "btnList";
+            btnList.Size = new System.Drawing.Size(80, 38);
+            btnList.TabIndex = 10;
+            btnList.Text = "List";
+            btnList.UseVisualStyleBackColor = true;
+            btnList.Click += btnList_Click;
             // 
             // Vehicle_Registration
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1834, 853);
+            ClientSize = new System.Drawing.Size(2041, 853);
+            Controls.Add(btnList);
+            Controls.Add(btnDelete);
+            Controls.Add(listBox1);
             Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
             Controls.Add(panel3);
             Controls.Add(panelMenu);
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
@@ -385,8 +479,6 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
@@ -400,11 +492,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblBrand;
-        private System.Windows.Forms.TextBox tbPlateSearch;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label lblCoSurname;
         private System.Windows.Forms.Label lblColor;
         private System.Windows.Forms.Label lblModel;
@@ -418,8 +507,19 @@
         private System.Windows.Forms.TextBox tbBrand;
         private System.Windows.Forms.TextBox tbLisancePlate;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.MaskedTextBox tbCoPhoneNumber;
         private System.Windows.Forms.Label lblCoName;
         private System.Windows.Forms.TextBox tbCoSurname;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.TextBox tbCustomeID;
+        private System.Windows.Forms.TextBox tbDirtStatusID;
+        private System.Windows.Forms.TextBox tbVehicleTypeID;
+        private System.Windows.Forms.TextBox tbOrderNo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbCoPhoneNumber;
     }
 }

@@ -1,4 +1,6 @@
 ﻿using BA.CarWashingApp.BLL.Managers;
+using BA.CarWashingApp.DAL.Context;
+using BA.CarWashingApp.DAL.Uow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,9 @@ namespace BA.CarWashingApp.UI
 {
     public partial class FormLoginMenu : Form
     {
+        SystemUserManager sum = new SystemUserManager(new Uow(new AppDbContext()));
+        int tempid = 0;
+        
 
         public FormMainMenu FormMainMenu;
 
@@ -25,39 +30,36 @@ namespace BA.CarWashingApp.UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-            
-
-            string username = "emp";
-            string password = "emp";
-            if (tboxUserName.Text != "Admin")
+            try
             {
-                FormMainMenu formMainMenu = new FormMainMenu();
-                
-                Employees empform = new Employees();
-                empform.Hide();
-            }
-            if (tboxUserName.Text == username )
-            {
-                if (tboxPassword.Text == password)
+                var control = sum.IsAccountTrue(tboxUserName.Text, tboxPassword.Text);
+                if (control == -1)
                 {
-                    FormMainMenu frmMain = new FormMainMenu();                
-                    frmMain.Show();
-                    this.Hide();
+                    MessageBox.Show("Giriş Bilgileri Hatalı! Tekrar Girin!");
                 }
                 else
                 {
-                    MessageBox.Show("Wrong Password!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tempid = control;
+                    FormMainMenu frmMain = new FormMainMenu(tempid);
+                    
+
+                    frmMain.Show();
+                    this.Hide();
                 }
+
+               /* if (tboxUserName.Text != "Admin")
+                {
+                    FormMainMenu formMainMenu = new FormMainMenu();
+
+                    Employees empform = new Employees();
+                    empform.Hide();
+                }*/
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Wrong Username!", "Hata!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
+                MessageBox.Show(" Lütfen bilgileri doğru giriniz!");
             }
-
-
+          
         }
 
         private void btnShowPassword_Click(object sender, EventArgs e)

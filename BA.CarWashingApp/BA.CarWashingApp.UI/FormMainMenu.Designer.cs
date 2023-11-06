@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             panelMenu = new System.Windows.Forms.Panel();
+            btnWashing = new System.Windows.Forms.Button();
             btnAppSettings = new System.Windows.Forms.Button();
             btnAppUser = new System.Windows.Forms.Button();
             btnEmployees = new System.Windows.Forms.Button();
             btnStock = new System.Windows.Forms.Button();
             btnWashStatus = new System.Windows.Forms.Button();
-            btnVR = new System.Windows.Forms.Button();
             panel1 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
+            btnVR = new System.Windows.Forms.Button();
             panel3 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             panelMenu.SuspendLayout();
@@ -48,6 +49,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            panelMenu.Controls.Add(btnWashing);
             panelMenu.Controls.Add(btnAppSettings);
             panelMenu.Controls.Add(btnAppUser);
             panelMenu.Controls.Add(btnEmployees);
@@ -57,10 +59,27 @@
             panelMenu.Controls.Add(btnVR);
             panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             panelMenu.Location = new System.Drawing.Point(0, 0);
-            panelMenu.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            panelMenu.Margin = new System.Windows.Forms.Padding(7);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new System.Drawing.Size(326, 945);
             panelMenu.TabIndex = 2;
+            // 
+            // btnWashing
+            // 
+            btnWashing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnWashing.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnWashing.Image = Properties.Resources.icons8_car_cleaning_64;
+            btnWashing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnWashing.Location = new System.Drawing.Point(0, 435);
+            btnWashing.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnWashing.Name = "btnWashing";
+            btnWashing.Size = new System.Drawing.Size(326, 87);
+            btnWashing.TabIndex = 9;
+            btnWashing.Text = "   Washing";
+            btnWashing.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnWashing.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btnWashing.UseVisualStyleBackColor = true;
+            btnWashing.Click += btnWashing_Click;
             // 
             // btnAppSettings
             // 
@@ -68,7 +87,7 @@
             btnAppSettings.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnAppSettings.Image = Properties.Resources.icons8_settings_50;
             btnAppSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnAppSettings.Location = new System.Drawing.Point(0, 621);
+            btnAppSettings.Location = new System.Drawing.Point(0, 714);
             btnAppSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnAppSettings.Name = "btnAppSettings";
             btnAppSettings.Size = new System.Drawing.Size(326, 87);
@@ -121,7 +140,7 @@
             btnStock.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnStock.Image = Properties.Resources.icons8_new_product_50;
             btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnStock.Location = new System.Drawing.Point(0, 528);
+            btnStock.Location = new System.Drawing.Point(0, 621);
             btnStock.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnStock.Name = "btnStock";
             btnStock.Size = new System.Drawing.Size(326, 87);
@@ -138,7 +157,7 @@
             btnWashStatus.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btnWashStatus.Image = Properties.Resources.icons8_car_cleaning_64;
             btnWashStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnWashStatus.Location = new System.Drawing.Point(0, 435);
+            btnWashStatus.Location = new System.Drawing.Point(0, 528);
             btnWashStatus.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             btnWashStatus.Name = "btnWashStatus";
             btnWashStatus.Size = new System.Drawing.Size(326, 87);
@@ -148,23 +167,6 @@
             btnWashStatus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             btnWashStatus.UseVisualStyleBackColor = true;
             btnWashStatus.Click += btnWashStatus_Click;
-            // 
-            // btnVR
-            // 
-            btnVR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnVR.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnVR.Image = Properties.Resources.icons8_add_car_48;
-            btnVR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnVR.Location = new System.Drawing.Point(0, 342);
-            btnVR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            btnVR.Name = "btnVR";
-            btnVR.Size = new System.Drawing.Size(326, 87);
-            btnVR.TabIndex = 5;
-            btnVR.Text = "Vehicle Registration";
-            btnVR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnVR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            btnVR.UseVisualStyleBackColor = true;
-            btnVR.Click += btnVR_Click;
             // 
             // panel1
             // 
@@ -201,6 +203,23 @@
             panel2.Name = "panel2";
             panel2.Size = new System.Drawing.Size(138, 108);
             panel2.TabIndex = 1;
+            // 
+            // btnVR
+            // 
+            btnVR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnVR.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnVR.Image = Properties.Resources.icons8_add_car_48;
+            btnVR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnVR.Location = new System.Drawing.Point(0, 342);
+            btnVR.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnVR.Name = "btnVR";
+            btnVR.Size = new System.Drawing.Size(326, 87);
+            btnVR.TabIndex = 5;
+            btnVR.Text = "Vehicle Registration";
+            btnVR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnVR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            btnVR.UseVisualStyleBackColor = true;
+            btnVR.Click += btnVR_Click;
             // 
             // panel3
             // 
@@ -258,5 +277,6 @@
         private System.Windows.Forms.Button btnAppSettings;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnWashing;
     }
 }

@@ -12,6 +12,8 @@ namespace BA.CarWashingApp.BLL.Services
      
         bool SearchLicensePlate(string LicensePlate);
         string RegisteringVehicle(Vehicle entity);
+
+        List<Vehicle> GetVehiclewithCustomer();
             
        
     }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BA.CarWashingApp.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class mig_1 : Migration
+    public partial class first : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

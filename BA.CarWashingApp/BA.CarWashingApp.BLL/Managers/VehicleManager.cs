@@ -1,6 +1,7 @@
 ﻿using BA.CarWashingApp.BLL.Services;
 using BA.CarWashingApp.DAL.Uow;
 using BA.CarWashingApp.Entity.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,12 +16,11 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-        
-        
-            //UI da  araç kaydet sayfasında customer add de çağır.
-        
-
-       
+        public List<Vehicle> GetVehiclewithCustomer()
+        {
+            var repo = _uow.GetRepository<Vehicle>().GetQueryable().Include(x => x.Customer).ToList();
+            return repo;
+        }
 
         public string RegisteringVehicle(Vehicle entity)
         {
@@ -29,11 +29,11 @@ namespace BA.CarWashingApp.BLL.Managers
             if (isExist)
             {
                 
-                return "plaka zaten tanımlı";
+                return "Plaka zaten tanımlı";
             }
             repo.Add(entity);
             _uow.SaveChanges();
-            return "araç başırı ile eklendi";
+            return "Araç başarı ile eklendi";
 
             
         }

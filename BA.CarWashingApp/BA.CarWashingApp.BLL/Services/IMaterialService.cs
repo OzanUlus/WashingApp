@@ -11,5 +11,6 @@ namespace BA.CarWashingApp.BLL.Services
     {
         
         string QueryMaterial(string Name);
+        Material GetByName(string Name);
     }
 }

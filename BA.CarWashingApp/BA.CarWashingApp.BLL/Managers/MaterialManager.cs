@@ -15,20 +15,29 @@ namespace BA.CarWashingApp.BLL.Managers
         {
         }
 
-    
+        public Material GetByName(string Name)
+        {
+            var entity = _uow.GetRepository<Material>().GetQueryable().Where(x => x.Name == Name).FirstOrDefault();
+            return entity;
+        }
+
         public string QueryMaterial(string Name)
         {
             var repo = _uow.GetRepository<Material>();
-            var query = repo.GetQueryable().Where(x=>x.Name == Name).ToList();
-            var minstock=repo.GetQueryable().Where(x => x.Name == Name) .Select(entity=>entity.MinStock).First();
-            var stock = repo.GetQueryable().Where(x=>x.Name==Name).Select(entity=>entity.Stock).First();
-            if (stock <= minstock  ) 
+            var query = repo.GetQueryable().Where(x=>x.Name == Name).FirstOrDefault();
+            if (query != null)
             {
-                return "stok az";
+                var minstock = repo.GetQueryable().Where(x => x.Name == Name).Select(entity => entity.MinStock).First();
+                var stock = repo.GetQueryable().Where(x => x.Name == Name).Select(entity => entity.Stock).First();
+                if (stock <= minstock)
+                {
+                    return "Uyarı! Girdiğiniz Ürünün Stoğu Minimum Stok Miktarının Altına Düşmüştür!";
+                }
+                var str = Convert.ToString(stock);
+                var minstr = Convert.ToString(minstock);
+                return "minimum stok miktarınız: " + minstr + ", depoda bulunan stok: " + str;
             }
-            var str = Convert.ToString(stock);
-            var minstr = Convert.ToString(minstock);
-            return "minimum stok miktarınız: "+ minstr+ ", depoda bulunan stok: "+str  ;
+            return "Böyle bir ürün bulunamamıştır. Lütfen tekrar materyal ismi giriniz.";
            
         }
     }

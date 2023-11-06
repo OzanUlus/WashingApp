@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BA.CarWashingApp.DAL.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231102211725_mig_1")]
-    partial class mig_1
+    [Migration("20231104223224_first")]
+    partial class first
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

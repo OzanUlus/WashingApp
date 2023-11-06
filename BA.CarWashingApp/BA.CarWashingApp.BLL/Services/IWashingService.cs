@@ -22,5 +22,6 @@ namespace BA.CarWashingApp.BLL.Services
         List<Washing> ListDetail(int washingId);
         void WashingStepProcess(Washing washing);
         void ReduceStock(Washing washing);
+       
     }
 }

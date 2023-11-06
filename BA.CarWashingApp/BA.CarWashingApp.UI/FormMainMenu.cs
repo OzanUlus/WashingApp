@@ -1,4 +1,7 @@
-﻿using BA.CarWashingApp.Entity.Entities;
+﻿using BA.CarWashingApp.BLL.Managers;
+using BA.CarWashingApp.DAL.Context;
+using BA.CarWashingApp.DAL.Uow;
+using BA.CarWashingApp.Entity.Entities;
 using BA.CarWashingApp.Entity.Enums;
 using System;
 using System.Collections.Generic;
@@ -15,22 +18,27 @@ namespace BA.CarWashingApp.UI
     public partial class FormMainMenu : Form
     {
         SystemUser su = new SystemUser();
+        SystemUserManager sum = new SystemUserManager(new Uow(new AppDbContext()));
+        int userid;
 
 
-        public FormMainMenu()
+        public FormMainMenu(int tempid)
         {
             InitializeComponent();
+            this.userid = tempid;
+            var user = sum.GetById(userid);
+            if (user.Role == RoleType.Employee)
+            {
+                btnEmployees.Visible = false;
+                btnAppUser.Visible = false;
+            }
         }
 
 
 
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-            if (su.Role == RoleType.Employee)
-            {
-                btnEmployees.Visible = false;
-                btnAppUser.Visible = false;
-            }
+            
 
         }
 
@@ -74,6 +82,12 @@ namespace BA.CarWashingApp.UI
         private void FormMainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnWashing_Click(object sender, EventArgs e)
+        {
+            AddWashing washing = new AddWashing();
+            washing.Show();
         }
     }
 }

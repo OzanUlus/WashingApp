@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BA.CarWashingApp.BLL.Managers
 {
-    internal class EmployeeManager : BaseManager<Employee>, IEmployeeService
+    public class EmployeeManager : BaseManager<Employee>, IEmployeeService
     {
         public EmployeeManager(IUow uow) : base(uow)
         {

@@ -34,42 +34,52 @@
             panel2 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
-            CbTypeName = new System.Windows.Forms.ComboBox();
+            CbVTTypeName = new System.Windows.Forms.ComboBox();
             lblTypeName = new System.Windows.Forms.Label();
             lblDirtType = new System.Windows.Forms.Label();
             gbVehicleType = new System.Windows.Forms.GroupBox();
-            tbMaterialFact = new System.Windows.Forms.TextBox();
-            tbPriceFact = new System.Windows.Forms.TextBox();
-            tbTimeFact = new System.Windows.Forms.TextBox();
+            tbVTMaterialFact = new System.Windows.Forms.TextBox();
+            tbVTPriceFact = new System.Windows.Forms.TextBox();
+            tbVTTimeFact = new System.Windows.Forms.TextBox();
             lblMaterialFact = new System.Windows.Forms.Label();
             lblPriceFact = new System.Windows.Forms.Label();
-            lblTimeFact = new System.Windows.Forms.Label();
+            lblVtypeTime = new System.Windows.Forms.Label();
             gbDirtStatus = new System.Windows.Forms.GroupBox();
-            textBox1 = new System.Windows.Forms.TextBox();
-            textBox2 = new System.Windows.Forms.TextBox();
-            textBox3 = new System.Windows.Forms.TextBox();
+            tbDSMaterialFact = new System.Windows.Forms.TextBox();
+            tbDSPriceFact = new System.Windows.Forms.TextBox();
+            tbDSTimeFact = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
-            cbStatusName = new System.Windows.Forms.ComboBox();
+            cbDSStatusName = new System.Windows.Forms.ComboBox();
             lblStatusName = new System.Windows.Forms.Label();
             gbWashingType = new System.Windows.Forms.GroupBox();
-            textBox4 = new System.Windows.Forms.TextBox();
-            textBox5 = new System.Windows.Forms.TextBox();
-            textBox6 = new System.Windows.Forms.TextBox();
+            tbWTMaterialFact = new System.Windows.Forms.TextBox();
+            tbWTPriceFact = new System.Windows.Forms.TextBox();
+            tbWTTimeFact = new System.Windows.Forms.TextBox();
             label6 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
-            comboBox1 = new System.Windows.Forms.ComboBox();
+            cbWTTypeName = new System.Windows.Forms.ComboBox();
             label9 = new System.Windows.Forms.Label();
-            btnAppSettingsAdd = new System.Windows.Forms.Button();
+            btnWRAdd = new System.Windows.Forms.Button();
             groupBox1 = new System.Windows.Forms.GroupBox();
-            textBox8 = new System.Windows.Forms.TextBox();
-            textBox9 = new System.Windows.Forms.TextBox();
-            label11 = new System.Windows.Forms.Label();
+            groupBox2 = new System.Windows.Forms.GroupBox();
+            tbMID = new System.Windows.Forms.TextBox();
+            tbDSID = new System.Windows.Forms.TextBox();
+            tbVTID = new System.Windows.Forms.TextBox();
+            tbWTID = new System.Windows.Forms.TextBox();
+            label14 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
-            comboBox2 = new System.Windows.Forms.ComboBox();
+            label15 = new System.Windows.Forms.Label();
+            label10 = new System.Windows.Forms.Label();
+            tbWRMaterialName = new System.Windows.Forms.TextBox();
+            tbWRPriceFact = new System.Windows.Forms.TextBox();
+            label11 = new System.Windows.Forms.Label();
             label13 = new System.Windows.Forms.Label();
+            btnVTAdd = new System.Windows.Forms.Button();
+            btnWTAdd = new System.Windows.Forms.Button();
+            btnDSAdd = new System.Windows.Forms.Button();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -77,6 +87,7 @@
             gbDirtStatus.SuspendLayout();
             gbWashingType.SuspendLayout();
             groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // panelMenu
@@ -149,16 +160,15 @@
             label1.Text = "Application Settings";
             label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // CbTypeName
+            // CbVTTypeName
             // 
-            CbTypeName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            CbTypeName.FormattingEnabled = true;
-            CbTypeName.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
-            CbTypeName.Location = new System.Drawing.Point(167, 68);
-            CbTypeName.Name = "CbTypeName";
-            CbTypeName.Size = new System.Drawing.Size(242, 37);
-            CbTypeName.TabIndex = 10;
-            CbTypeName.SelectedIndexChanged += CbVehicleType_SelectedIndexChanged;
+            CbVTTypeName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            CbVTTypeName.FormattingEnabled = true;
+            CbVTTypeName.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
+            CbVTTypeName.Location = new System.Drawing.Point(167, 68);
+            CbVTTypeName.Name = "CbVTTypeName";
+            CbVTTypeName.Size = new System.Drawing.Size(242, 37);
+            CbVTTypeName.TabIndex = 10;
             // 
             // lblTypeName
             // 
@@ -182,13 +192,13 @@
             // 
             // gbVehicleType
             // 
-            gbVehicleType.Controls.Add(tbMaterialFact);
-            gbVehicleType.Controls.Add(tbPriceFact);
-            gbVehicleType.Controls.Add(tbTimeFact);
+            gbVehicleType.Controls.Add(tbVTMaterialFact);
+            gbVehicleType.Controls.Add(tbVTPriceFact);
+            gbVehicleType.Controls.Add(tbVTTimeFact);
             gbVehicleType.Controls.Add(lblMaterialFact);
             gbVehicleType.Controls.Add(lblPriceFact);
-            gbVehicleType.Controls.Add(lblTimeFact);
-            gbVehicleType.Controls.Add(CbTypeName);
+            gbVehicleType.Controls.Add(lblVtypeTime);
+            gbVehicleType.Controls.Add(CbVTTypeName);
             gbVehicleType.Controls.Add(lblTypeName);
             gbVehicleType.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             gbVehicleType.Location = new System.Drawing.Point(377, 131);
@@ -198,28 +208,28 @@
             gbVehicleType.TabStop = false;
             gbVehicleType.Text = "Vehicle Type";
             // 
-            // tbMaterialFact
+            // tbVTMaterialFact
             // 
-            tbMaterialFact.Location = new System.Drawing.Point(167, 250);
-            tbMaterialFact.Name = "tbMaterialFact";
-            tbMaterialFact.Size = new System.Drawing.Size(242, 36);
-            tbMaterialFact.TabIndex = 17;
+            tbVTMaterialFact.Location = new System.Drawing.Point(167, 250);
+            tbVTMaterialFact.Name = "tbVTMaterialFact";
+            tbVTMaterialFact.Size = new System.Drawing.Size(242, 36);
+            tbVTMaterialFact.TabIndex = 17;
             // 
-            // tbPriceFact
+            // tbVTPriceFact
             // 
-            tbPriceFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            tbPriceFact.Location = new System.Drawing.Point(167, 195);
-            tbPriceFact.Name = "tbPriceFact";
-            tbPriceFact.Size = new System.Drawing.Size(242, 36);
-            tbPriceFact.TabIndex = 16;
+            tbVTPriceFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbVTPriceFact.Location = new System.Drawing.Point(167, 195);
+            tbVTPriceFact.Name = "tbVTPriceFact";
+            tbVTPriceFact.Size = new System.Drawing.Size(242, 36);
+            tbVTPriceFact.TabIndex = 16;
             // 
-            // tbTimeFact
+            // tbVTTimeFact
             // 
-            tbTimeFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            tbTimeFact.Location = new System.Drawing.Point(167, 127);
-            tbTimeFact.Name = "tbTimeFact";
-            tbTimeFact.Size = new System.Drawing.Size(242, 36);
-            tbTimeFact.TabIndex = 15;
+            tbVTTimeFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbVTTimeFact.Location = new System.Drawing.Point(167, 127);
+            tbVTTimeFact.Name = "tbVTTimeFact";
+            tbVTTimeFact.Size = new System.Drawing.Size(242, 36);
+            tbVTTimeFact.TabIndex = 15;
             // 
             // lblMaterialFact
             // 
@@ -239,25 +249,24 @@
             lblPriceFact.TabIndex = 13;
             lblPriceFact.Text = "Price Factor :";
             // 
-            // lblTimeFact
+            // lblVtypeTime
             // 
-            lblTimeFact.AutoSize = true;
-            lblTimeFact.Location = new System.Drawing.Point(28, 130);
-            lblTimeFact.Name = "lblTimeFact";
-            lblTimeFact.Size = new System.Drawing.Size(120, 29);
-            lblTimeFact.TabIndex = 12;
-            lblTimeFact.Text = "Time Factor : ";
-            lblTimeFact.Click += label3_Click;
+            lblVtypeTime.AutoSize = true;
+            lblVtypeTime.Location = new System.Drawing.Point(28, 130);
+            lblVtypeTime.Name = "lblVtypeTime";
+            lblVtypeTime.Size = new System.Drawing.Size(120, 29);
+            lblVtypeTime.TabIndex = 12;
+            lblVtypeTime.Text = "Time Factor : ";
             // 
             // gbDirtStatus
             // 
-            gbDirtStatus.Controls.Add(textBox1);
-            gbDirtStatus.Controls.Add(textBox2);
-            gbDirtStatus.Controls.Add(textBox3);
+            gbDirtStatus.Controls.Add(tbDSMaterialFact);
+            gbDirtStatus.Controls.Add(tbDSPriceFact);
+            gbDirtStatus.Controls.Add(tbDSTimeFact);
             gbDirtStatus.Controls.Add(label3);
             gbDirtStatus.Controls.Add(label4);
             gbDirtStatus.Controls.Add(label5);
-            gbDirtStatus.Controls.Add(cbStatusName);
+            gbDirtStatus.Controls.Add(cbDSStatusName);
             gbDirtStatus.Controls.Add(lblStatusName);
             gbDirtStatus.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             gbDirtStatus.Location = new System.Drawing.Point(883, 131);
@@ -267,28 +276,28 @@
             gbDirtStatus.TabStop = false;
             gbDirtStatus.Text = "Dirt Status";
             // 
-            // textBox1
+            // tbDSMaterialFact
             // 
-            textBox1.Location = new System.Drawing.Point(167, 250);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new System.Drawing.Size(242, 36);
-            textBox1.TabIndex = 17;
+            tbDSMaterialFact.Location = new System.Drawing.Point(167, 250);
+            tbDSMaterialFact.Name = "tbDSMaterialFact";
+            tbDSMaterialFact.Size = new System.Drawing.Size(242, 36);
+            tbDSMaterialFact.TabIndex = 17;
             // 
-            // textBox2
+            // tbDSPriceFact
             // 
-            textBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox2.Location = new System.Drawing.Point(167, 195);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new System.Drawing.Size(242, 36);
-            textBox2.TabIndex = 16;
+            tbDSPriceFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbDSPriceFact.Location = new System.Drawing.Point(167, 195);
+            tbDSPriceFact.Name = "tbDSPriceFact";
+            tbDSPriceFact.Size = new System.Drawing.Size(242, 36);
+            tbDSPriceFact.TabIndex = 16;
             // 
-            // textBox3
+            // tbDSTimeFact
             // 
-            textBox3.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox3.Location = new System.Drawing.Point(167, 127);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new System.Drawing.Size(242, 36);
-            textBox3.TabIndex = 15;
+            tbDSTimeFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbDSTimeFact.Location = new System.Drawing.Point(167, 127);
+            tbDSTimeFact.Name = "tbDSTimeFact";
+            tbDSTimeFact.Size = new System.Drawing.Size(242, 36);
+            tbDSTimeFact.TabIndex = 15;
             // 
             // label3
             // 
@@ -317,15 +326,15 @@
             label5.TabIndex = 12;
             label5.Text = "Time Factor : ";
             // 
-            // cbStatusName
+            // cbDSStatusName
             // 
-            cbStatusName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            cbStatusName.FormattingEnabled = true;
-            cbStatusName.Items.AddRange(new object[] { "Very Dirty", "Normal", "Low Dirty" });
-            cbStatusName.Location = new System.Drawing.Point(167, 68);
-            cbStatusName.Name = "cbStatusName";
-            cbStatusName.Size = new System.Drawing.Size(242, 37);
-            cbStatusName.TabIndex = 10;
+            cbDSStatusName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cbDSStatusName.FormattingEnabled = true;
+            cbDSStatusName.Items.AddRange(new object[] { "Very Dirty", "Normal", "Low Dirty" });
+            cbDSStatusName.Location = new System.Drawing.Point(167, 68);
+            cbDSStatusName.Name = "cbDSStatusName";
+            cbDSStatusName.Size = new System.Drawing.Size(242, 37);
+            cbDSStatusName.TabIndex = 10;
             // 
             // lblStatusName
             // 
@@ -339,13 +348,13 @@
             // 
             // gbWashingType
             // 
-            gbWashingType.Controls.Add(textBox4);
-            gbWashingType.Controls.Add(textBox5);
-            gbWashingType.Controls.Add(textBox6);
+            gbWashingType.Controls.Add(tbWTMaterialFact);
+            gbWashingType.Controls.Add(tbWTPriceFact);
+            gbWashingType.Controls.Add(tbWTTimeFact);
             gbWashingType.Controls.Add(label6);
             gbWashingType.Controls.Add(label7);
             gbWashingType.Controls.Add(label8);
-            gbWashingType.Controls.Add(comboBox1);
+            gbWashingType.Controls.Add(cbWTTypeName);
             gbWashingType.Controls.Add(label9);
             gbWashingType.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             gbWashingType.Location = new System.Drawing.Point(371, 496);
@@ -355,28 +364,28 @@
             gbWashingType.TabStop = false;
             gbWashingType.Text = "Washing Type";
             // 
-            // textBox4
+            // tbWTMaterialFact
             // 
-            textBox4.Location = new System.Drawing.Point(167, 250);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new System.Drawing.Size(242, 36);
-            textBox4.TabIndex = 17;
+            tbWTMaterialFact.Location = new System.Drawing.Point(167, 250);
+            tbWTMaterialFact.Name = "tbWTMaterialFact";
+            tbWTMaterialFact.Size = new System.Drawing.Size(242, 36);
+            tbWTMaterialFact.TabIndex = 17;
             // 
-            // textBox5
+            // tbWTPriceFact
             // 
-            textBox5.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox5.Location = new System.Drawing.Point(167, 195);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new System.Drawing.Size(242, 36);
-            textBox5.TabIndex = 16;
+            tbWTPriceFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWTPriceFact.Location = new System.Drawing.Point(167, 195);
+            tbWTPriceFact.Name = "tbWTPriceFact";
+            tbWTPriceFact.Size = new System.Drawing.Size(242, 36);
+            tbWTPriceFact.TabIndex = 16;
             // 
-            // textBox6
+            // tbWTTimeFact
             // 
-            textBox6.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox6.Location = new System.Drawing.Point(167, 127);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new System.Drawing.Size(242, 36);
-            textBox6.TabIndex = 15;
+            tbWTTimeFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWTTimeFact.Location = new System.Drawing.Point(167, 127);
+            tbWTTimeFact.Name = "tbWTTimeFact";
+            tbWTTimeFact.Size = new System.Drawing.Size(242, 36);
+            tbWTTimeFact.TabIndex = 15;
             // 
             // label6
             // 
@@ -405,15 +414,15 @@
             label8.TabIndex = 12;
             label8.Text = "Time Factor : ";
             // 
-            // comboBox1
+            // cbWTTypeName
             // 
-            comboBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Inside", "Outside", "Inside+Outside" });
-            comboBox1.Location = new System.Drawing.Point(167, 68);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new System.Drawing.Size(242, 37);
-            comboBox1.TabIndex = 10;
+            cbWTTypeName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            cbWTTypeName.FormattingEnabled = true;
+            cbWTTypeName.Items.AddRange(new object[] { "Inside", "Outside", "Inside+Outside" });
+            cbWTTypeName.Location = new System.Drawing.Point(167, 68);
+            cbWTTypeName.Name = "cbWTTypeName";
+            cbWTTypeName.Size = new System.Drawing.Size(242, 37);
+            cbWTTypeName.TabIndex = 10;
             // 
             // label9
             // 
@@ -425,94 +434,197 @@
             label9.TabIndex = 11;
             label9.Text = "Type Name: ";
             // 
-            // btnAppSettingsAdd
+            // btnWRAdd
             // 
-            btnAppSettingsAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btnAppSettingsAdd.Location = new System.Drawing.Point(1452, 445);
-            btnAppSettingsAdd.Name = "btnAppSettingsAdd";
-            btnAppSettingsAdd.Size = new System.Drawing.Size(145, 70);
-            btnAppSettingsAdd.TabIndex = 22;
-            btnAppSettingsAdd.Text = "Add";
-            btnAppSettingsAdd.UseVisualStyleBackColor = true;
+            btnWRAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnWRAdd.Location = new System.Drawing.Point(1261, 798);
+            btnWRAdd.Name = "btnWRAdd";
+            btnWRAdd.Size = new System.Drawing.Size(86, 58);
+            btnWRAdd.TabIndex = 22;
+            btnWRAdd.Text = "Add";
+            btnWRAdd.UseVisualStyleBackColor = true;
+            btnWRAdd.Click += btnWRAdd_Click;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox8);
-            groupBox1.Controls.Add(textBox9);
+            groupBox1.Controls.Add(groupBox2);
+            groupBox1.Controls.Add(tbWRMaterialName);
+            groupBox1.Controls.Add(tbWRPriceFact);
             groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(comboBox2);
             groupBox1.Controls.Add(label13);
             groupBox1.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             groupBox1.Location = new System.Drawing.Point(889, 496);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new System.Drawing.Size(415, 296);
+            groupBox1.Size = new System.Drawing.Size(458, 296);
             groupBox1.TabIndex = 23;
             groupBox1.TabStop = false;
             groupBox1.Text = "Washing Recipe";
             // 
-            // textBox8
+            // groupBox2
             // 
-            textBox8.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox8.Location = new System.Drawing.Point(167, 195);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new System.Drawing.Size(242, 36);
-            textBox8.TabIndex = 16;
+            groupBox2.Controls.Add(tbMID);
+            groupBox2.Controls.Add(tbDSID);
+            groupBox2.Controls.Add(tbVTID);
+            groupBox2.Controls.Add(tbWTID);
+            groupBox2.Controls.Add(label14);
+            groupBox2.Controls.Add(label12);
+            groupBox2.Controls.Add(label15);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            groupBox2.Location = new System.Drawing.Point(95, 122);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new System.Drawing.Size(308, 168);
+            groupBox2.TabIndex = 31;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "AMOUNT";
             // 
-            // textBox9
+            // tbMID
             // 
-            textBox9.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            textBox9.Location = new System.Drawing.Point(167, 127);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new System.Drawing.Size(242, 36);
-            textBox9.TabIndex = 15;
+            tbMID.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbMID.Location = new System.Drawing.Point(116, 136);
+            tbMID.Name = "tbMID";
+            tbMID.Size = new System.Drawing.Size(162, 27);
+            tbMID.TabIndex = 35;
+            // 
+            // tbDSID
+            // 
+            tbDSID.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbDSID.Location = new System.Drawing.Point(116, 103);
+            tbDSID.Name = "tbDSID";
+            tbDSID.Size = new System.Drawing.Size(162, 27);
+            tbDSID.TabIndex = 34;
+            // 
+            // tbVTID
+            // 
+            tbVTID.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbVTID.Location = new System.Drawing.Point(116, 72);
+            tbVTID.Name = "tbVTID";
+            tbVTID.Size = new System.Drawing.Size(162, 27);
+            tbVTID.TabIndex = 33;
+            // 
+            // tbWTID
+            // 
+            tbWTID.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWTID.Location = new System.Drawing.Point(116, 39);
+            tbWTID.Name = "tbWTID";
+            tbWTID.Size = new System.Drawing.Size(162, 27);
+            tbWTID.TabIndex = 32;
+            tbWTID.TextChanged += textBox1_TextChanged;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new System.Drawing.Point(56, 72);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(48, 23);
+            label14.TabIndex = 29;
+            label14.Text = "VT ID :";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new System.Drawing.Point(50, 103);
+            label12.Name = "label12";
+            label12.Size = new System.Drawing.Size(49, 23);
+            label12.TabIndex = 28;
+            label12.Text = "DS ID :";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new System.Drawing.Point(50, 39);
+            label15.Name = "label15";
+            label15.Size = new System.Drawing.Size(52, 23);
+            label15.TabIndex = 30;
+            label15.Text = "WT ID :";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new System.Drawing.Point(55, 132);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(44, 23);
+            label10.TabIndex = 27;
+            label10.Text = "M ID :";
+            // 
+            // tbWRMaterialName
+            // 
+            tbWRMaterialName.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWRMaterialName.Location = new System.Drawing.Point(161, 32);
+            tbWRMaterialName.Name = "tbWRMaterialName";
+            tbWRMaterialName.Size = new System.Drawing.Size(242, 36);
+            tbWRMaterialName.TabIndex = 17;
+            // 
+            // tbWRPriceFact
+            // 
+            tbWRPriceFact.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tbWRPriceFact.Location = new System.Drawing.Point(158, 76);
+            tbWRPriceFact.Name = "tbWRPriceFact";
+            tbWRPriceFact.Size = new System.Drawing.Size(242, 36);
+            tbWRPriceFact.TabIndex = 16;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(28, 195);
+            label11.Location = new System.Drawing.Point(34, 76);
             label11.Name = "label11";
             label11.Size = new System.Drawing.Size(118, 29);
             label11.TabIndex = 13;
             label11.Text = "Price Factor :";
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(28, 130);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(88, 29);
-            label12.TabIndex = 12;
-            label12.Text = "Amount : ";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "SUV", "Sedan", "HB" });
-            comboBox2.Location = new System.Drawing.Point(167, 68);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new System.Drawing.Size(242, 37);
-            comboBox2.TabIndex = 10;
-            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new System.Drawing.Font("Bahnschrift Condensed", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label13.Location = new System.Drawing.Point(35, 71);
+            label13.Location = new System.Drawing.Point(29, 39);
             label13.Name = "label13";
             label13.Size = new System.Drawing.Size(139, 29);
             label13.TabIndex = 11;
             label13.Text = "Material Name: ";
+            // 
+            // btnVTAdd
+            // 
+            btnVTAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnVTAdd.Location = new System.Drawing.Point(705, 423);
+            btnVTAdd.Name = "btnVTAdd";
+            btnVTAdd.Size = new System.Drawing.Size(87, 58);
+            btnVTAdd.TabIndex = 24;
+            btnVTAdd.Text = "Add";
+            btnVTAdd.UseVisualStyleBackColor = true;
+            btnVTAdd.Click += btnVTAdd_Click;
+            // 
+            // btnWTAdd
+            // 
+            btnWTAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnWTAdd.Location = new System.Drawing.Point(700, 788);
+            btnWTAdd.Name = "btnWTAdd";
+            btnWTAdd.Size = new System.Drawing.Size(86, 58);
+            btnWTAdd.TabIndex = 25;
+            btnWTAdd.Text = "Add";
+            btnWTAdd.UseVisualStyleBackColor = true;
+            btnWTAdd.Click += btnWTAdd_Click;
+            // 
+            // btnDSAdd
+            // 
+            btnDSAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnDSAdd.Location = new System.Drawing.Point(1261, 423);
+            btnDSAdd.Name = "btnDSAdd";
+            btnDSAdd.Size = new System.Drawing.Size(86, 58);
+            btnDSAdd.TabIndex = 26;
+            btnDSAdd.Text = "Add";
+            btnDSAdd.UseVisualStyleBackColor = true;
+            btnDSAdd.Click += btnDSAdd_Click;
             // 
             // App_Settings
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1695, 896);
+            Controls.Add(btnDSAdd);
+            Controls.Add(btnWTAdd);
+            Controls.Add(btnVTAdd);
             Controls.Add(groupBox1);
-            Controls.Add(btnAppSettingsAdd);
+            Controls.Add(btnWRAdd);
             Controls.Add(gbWashingType);
             Controls.Add(gbDirtStatus);
             Controls.Add(gbVehicleType);
@@ -522,6 +634,7 @@
             Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "App_Settings";
             Text = "App_Settings";
+            Load += App_Settings_Load;
             panelMenu.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -535,6 +648,8 @@
             gbWashingType.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -547,41 +662,51 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CbTypeName;
+        private System.Windows.Forms.ComboBox CbVTTypeName;
         private System.Windows.Forms.Label lblTypeName;
         private System.Windows.Forms.Label lblDirtType;
         private System.Windows.Forms.GroupBox gbVehicleType;
         private System.Windows.Forms.Label lblMaterialFact;
         private System.Windows.Forms.Label lblPriceFact;
-        private System.Windows.Forms.Label lblTimeFact;
-        private System.Windows.Forms.TextBox tbTimeFact;
-        private System.Windows.Forms.TextBox tbPriceFact;
-        private System.Windows.Forms.TextBox tbMaterialFact;
+        private System.Windows.Forms.Label lblVtypeTime;
+        private System.Windows.Forms.TextBox tbVTTimeFact;
+        private System.Windows.Forms.TextBox tbVTPriceFact;
+        private System.Windows.Forms.TextBox tbVTMaterialFact;
         private System.Windows.Forms.GroupBox gbDirtStatus;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tbDSMaterialFact;
+        private System.Windows.Forms.TextBox tbDSPriceFact;
+        private System.Windows.Forms.TextBox tbDSTimeFact;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbStatusName;
+        private System.Windows.Forms.ComboBox cbDSStatusName;
         private System.Windows.Forms.Label lblStatusName;
         private System.Windows.Forms.GroupBox gbWashingType;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tbWTMaterialFact;
+        private System.Windows.Forms.TextBox tbWTPriceFact;
+        private System.Windows.Forms.TextBox tbWTTimeFact;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbWTTypeName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnAppSettingsAdd;
+        private System.Windows.Forms.Button btnWRAdd;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox tbWRPriceFact;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnVTAdd;
+        private System.Windows.Forms.Button btnWTAdd;
+        private System.Windows.Forms.Button btnDSAdd;
+        private System.Windows.Forms.TextBox tbWRMaterialName;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox tbWTID;
+        private System.Windows.Forms.TextBox tbMID;
+        private System.Windows.Forms.TextBox tbDSID;
+        private System.Windows.Forms.TextBox tbVTID;
     }
 }

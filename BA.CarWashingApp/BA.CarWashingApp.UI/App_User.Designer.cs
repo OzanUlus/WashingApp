@@ -40,8 +40,11 @@
             tbPassword = new System.Windows.Forms.TextBox();
             cbRole = new System.Windows.Forms.ComboBox();
             lblRole = new System.Windows.Forms.Label();
-            btnAdd = new System.Windows.Forms.Button();
             gbAddRole = new System.Windows.Forms.GroupBox();
+            btnAdd = new System.Windows.Forms.Button();
+            btnDelete = new System.Windows.Forms.Button();
+            btnList = new System.Windows.Forms.Button();
+            listBox1 = new System.Windows.Forms.ListBox();
             panelMenu.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -136,6 +139,7 @@
             tbUserName.Name = "tbUserName";
             tbUserName.Size = new System.Drawing.Size(206, 42);
             tbUserName.TabIndex = 10;
+            
             // 
             // lblPassword
             // 
@@ -159,6 +163,7 @@
             // 
             cbRole.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             cbRole.FormattingEnabled = true;
+            cbRole.Items.AddRange(new object[] { "Admin", "Employee" });
             cbRole.Location = new System.Drawing.Point(252, 244);
             cbRole.Name = "cbRole";
             cbRole.Size = new System.Drawing.Size(206, 48);
@@ -174,17 +179,6 @@
             lblRole.TabIndex = 14;
             lblRole.Text = "Role: ";
             // 
-            // btnAdd
-            // 
-            btnAdd.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btnAdd.Location = new System.Drawing.Point(366, 345);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new System.Drawing.Size(92, 56);
-            btnAdd.TabIndex = 15;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // gbAddRole
             // 
             gbAddRole.Controls.Add(btnAdd);
@@ -194,17 +188,63 @@
             gbAddRole.Controls.Add(lblPassword);
             gbAddRole.Controls.Add(tbUserName);
             gbAddRole.Controls.Add(lblUserName);
-            gbAddRole.Location = new System.Drawing.Point(468, 226);
+            gbAddRole.Location = new System.Drawing.Point(377, 170);
             gbAddRole.Name = "gbAddRole";
-            gbAddRole.Size = new System.Drawing.Size(670, 482);
+            gbAddRole.Size = new System.Drawing.Size(582, 408);
             gbAddRole.TabIndex = 16;
             gbAddRole.TabStop = false;
+            // 
+            // btnAdd
+            // 
+            btnAdd.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnAdd.Location = new System.Drawing.Point(366, 327);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new System.Drawing.Size(92, 56);
+            btnAdd.TabIndex = 15;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // btnDelete
+            // 
+            btnDelete.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnDelete.Location = new System.Drawing.Point(1389, 612);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new System.Drawing.Size(92, 40);
+            btnDelete.TabIndex = 17;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
+            // 
+            // btnList
+            // 
+            btnList.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btnList.Location = new System.Drawing.Point(1522, 612);
+            btnList.Name = "btnList";
+            btnList.Size = new System.Drawing.Size(96, 40);
+            btnList.TabIndex = 19;
+            btnList.Text = "List";
+            btnList.UseVisualStyleBackColor = true;
+            btnList.Click += btnList_Click;
+            // 
+            // listBox1
+            // 
+            listBox1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 23;
+            listBox1.Location = new System.Drawing.Point(1053, 178);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new System.Drawing.Size(565, 395);
+            listBox1.TabIndex = 20;
             // 
             // App_User
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1670, 952);
+            Controls.Add(btnDelete);
+            Controls.Add(listBox1);
+            Controls.Add(btnList);
             Controls.Add(gbAddRole);
             Controls.Add(panel3);
             Controls.Add(panelMenu);
@@ -236,7 +276,10 @@
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label lblRole;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.GroupBox gbAddRole;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnList;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
